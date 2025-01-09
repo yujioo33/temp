@@ -1,0 +1,778 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: global
+log-level: info
+external-controller: '127.0.0.1:9090'
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver:
+    - 'https://doh.pub/dns-query'
+    - 'https://dns.alidns.com/dns-query'
+  fallback:
+    - 'https://doh.dns.sb/dns-query'
+    - 'https://dns.cloudflare.com/dns-query'
+    - 'https://dns.twnic.tw/dns-query'
+    - 'tls://8.8.4.4:853'
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+proxies:
+
+  - { name: "KTFF", type: vless, server: speed.marisalnc.com, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "HKG", type: vless, server: 104.17.128.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "美国CDN优选1", type: vless, server: 104.16.0.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "美国CDN优选2", type: vless, server: 190.93.244.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "美国CDN优选3", type: vless, server: 172.64.96.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "美国CDN优选4", type: vless, server: 103.21.244.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "美国CDN优选5", type: vless, server: 104.17.128.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "美国CDN优选6", type: vless, server: 172.67.160.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "美国CDN优选7", type: vless, server: 104.24.224.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "美国CDN优选8", type: vless, server: 172.67.192.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "美国CDN优选9", type: vless, server: 162.159.152.0, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "美国CDN优选10", type: vless, server: 104.16.201.109, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  
+  - { name: "RA-OpenAI", type: vless, server: openai.com, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "RA-EU", type: vless, server: www.baipiao.eu.org, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "RA-TW", type: vless, server: www.visa.com.tw, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "RA-HK", type: vless, server: www.visa.com.hk, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "RA-Timeis", type: vless, server: time.is, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  
+  - { name: "RCDN-A_联通", type: vless, server: 104.26.10.126, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "RCDN-B_电信", type: vless, server: 104.16.240.71, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  
+  - { name: "电信V4-A", type: vless, server: 104.17.193.187, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "电信V4-B", type: vless, server: 104.16.240.71, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "电信V4-C", type: vless, server: 172.64.50.133, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "电信V4-D", type: vless, server: 104.19.185.65, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合A", type: vless, server: 104.17.145.25, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合B", type: vless, server: 104.17.212.58, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合C", type: vless, server: 104.19.145.181, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合D", type: vless, server: 104.17.58.77, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合E", type: vless, server: 104.18.82.197, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合F", type: vless, server: 104.17.147.136, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合G", type: vless, server: 104.17.27.126, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合H", type: vless, server: 104.17.20.207, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合I", type: vless, server: 104.17.165.70, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合J", type: vless, server: 104.18.185.208, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合K", type: vless, server: 104.16.240.194, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合L", type: vless, server: 104.16.102.176, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合M", type: vless, server: 104.16.137.49, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合N", type: vless, server: 104.19.224.37, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合O", type: vless, server: 104.17.204.168, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合1", type: vless, server: 104.16.153.160, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合2", type: vless, server: 104.17.184.75, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合3", type: vless, server: 104.17.187.50, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合4", type: vless, server: 104.16.252.163, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合5", type: vless, server: 104.17.188.171, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合6", type: vless, server: 104.16.154.210, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合7", type: vless, server: 104.19.146.75, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合8", type: vless, server: 104.17.210.70, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合9", type: vless, server: 104.16.130.209, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合10", type: vless, server: 104.16.104.46, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合11", type: vless, server: 104.18.135.216, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合12", type: vless, server: 104.17.135.127, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合13", type: vless, server: 104.16.210.164, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合14", type: vless, server: 104.17.138.196, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "三网综合15", type: vless, server: 104.19.229.233, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  
+  - { name: "TelecomA", type: vless, server: 172.67.173.193, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "TelecomB", type: vless, server: 172.67.129.181, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "TelecomC", type: vless, server: 104.17.126.43, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+#以下为IPv6节点
+
+  - { name: "IPv6-移动1", type: vless, server: 2606:4700:3031::7ba6:6f81, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-移动2", type: vless, server: 2606:4700:3030::653f:4e4b, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-移动3", type: vless, server: 2606:4700:3032::43f3:79d6, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-移动4", type: vless, server: 2606:4700:90d1::3f87:1313, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-移动5", type: vless, server: 2606:4700:3033::6c13:704f, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-联通1", type: vless, server: 2606:4700:106::6491:2fa2, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-联通2", type: vless, server: 2a06:98c1:56::4aee:5d8d, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-联通3", type: vless, server: 2606:4700:a0::141d:4258, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "IPv6-联通4", type: vless, server: 2606:4700:3002::1817:652f, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-联通5", type: vless, server: 2606:4700:24::37a1:2e1f, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-电信1", type: vless, server: 2803:f800:52::712c:2c68, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-电信2", type: vless, server: 2606:4700:4400::3c1a:35bb, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-电信3", type: vless, server: 2606:4700:3036::1452:59e9, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-电信4", type: vless, server: 2a06:98c1:3122::6679:fa8, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-电信5", type: vless, server: 2606:4700:3030::28bd:308d, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+#以下为三网综合节点
+
+  - { name: "IPv6-BPG1", type: vless, server: 2a06:98c1:3101::2ff3:5a5e, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "IPv6-BPG2", type: vless, server: 2606:4700:9b09::f5c6:97bb, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-BPG3", type: vless, server: 2803:f800:51::3473:d311, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-BPG4", type: vless, server: 2606:4700:a9::e9bf:e35c, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "IPv6-BPG5", type: vless, server: 2606:4700:132::926:89d6, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }  
+
+  - { name: "IPv6-BPG6", type: vless, server: 2606:4700:10::5109:3ff1, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "IPv6-BPG7", type: vless, server: 2606:4700:58::11a6:12a8, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-BPG8", type: vless, server: 2606:4700:8::805b:b193, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-BPG9", type: vless, server: 2606:4700:440e::36a0:9ccf, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "IPv6-BPG10", type: vless, server: 2606:4700:9766::7dc5:134d, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }  
+  
+  - { name: "IPv6-BPG11", type: vless, server: 2606:4700:9a90::4c13:55fc, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "IPv6-BPG12", type: vless, server: 2606:4700:131::1a64:bbd4, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-BPG13", type: vless, server: 2606:4700:8ca2::8451:1cf6, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: "IPv6-BPG14", type: vless, server: 2606:4700:3030::a3f0:20b1, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "IPv6-BPG15", type: vless, server: 2606:4700:90d7::f7b3:cc6f, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+
+# 以下为数据中心配置
+
+  - { name: "移动HKG", type: vless, server: 2606:4700:57::dcf9:8416, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "移动SEA", type: vless, server: 2606:4700:20::bf7c:3d54, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "移动SJC", type: vless, server: 2406:98c1:3120::45f5:7df1, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "移动LAX", type: vless, server: 2400:cb00:2049::2c70f447, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "移动CDG", type: vless, server: 2606:4700:8395::fd51:181a, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "移动MRS", type: vless, server: 2606:4700:8502::532f:46b7, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "移动MXP", type: vless, server: 2606:4700:8d71::d263:6bc8, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "联通HKG", type: vless, server: 2606:4700:8390::4a73:3ea, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "联通SJC", type: vless, server: 2606:4700:a9::499e:ab3, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "联通LAX", type: vless, server: 2400:cb00:2049::fdbc:7a95, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "联通CDG", type: vless, server: 2606:4700:41::96a4:bd36, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: "电信SIN", type: vless, server: 2606:4700:8396::bd48:eb, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "电信SJC", type: vless, server: 2606:4700:13af::f982:382c, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "电信LAX", type: vless, server: 2606:4700:4400::4ee0:1877, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "电信AMS", type: vless, server: 2606:4700:839c::f96:8609, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "电信BRU", type: vless, server: 2606:4700:8d7d::55ed:4293, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "电信ATL", type: vless, server: 2606:4700:10::ea9c:aa9e, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "电信IAD", type: vless, server: 2606:4700:10::2ed1:d31e, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "电信LHR", type: vless, server: 2606:4700:3030::9ae:4b9b, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  - { name: "电信EWR", type: vless, server: 2606:4700:12::d5a49:87a9, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  #以下为电信专用节点，更新于2024-12-15 4:59:03 AM
+  
+  - { name: Telecom1, type: vless, server: 104.19.85.186, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom2, type: vless, server: 104.18.40.25, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom3, type: vless, server: 104.16.7.227, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom4, type: vless, server: 104.17.125.207, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom5, type: vless, server: 104.16.148.21, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom6, type: vless, server: 104.16.153.160, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom7, type: vless, server: 104.17.184.75, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom8, type: vless, server: 104.17.187.50, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom9, type: vless, server: 104.16.252.163, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom10, type: vless, server: 104.17.188.171, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom11, type: vless, server: 104.16.154.210, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom12, type: vless, server: 104.19.146.75, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom13, type: vless, server: 104.17.210.70, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom14, type: vless, server: 104.16.130.209, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom15, type: vless, server: 104.16.104.46, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom16, type: vless, server: 104.18.135.216, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom17, type: vless, server: 104.17.135.127, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom18, type: vless, server: 104.16.210.164, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom19, type: vless, server: 104.17.138.196, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom20, type: vless, server: 104.19.229.233, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom21, type: vless, server: 104.22.16.26, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom22, type: vless, server: 162.159.82.157, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom23, type: vless, server: 162.159.44.112, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom24, type: vless, server: 104.24.38.41, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom25, type: vless, server: 104.24.14.184, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom26, type: vless, server: 104.23.140.63, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom27, type: vless, server: 104.21.99.22, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom28, type: vless, server: 104.20.130.128, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom29, type: vless, server: 2a06:98c1:3101::2ff3:5a5e, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom30, type: vless, server: 2606:4700:9b09::f5c6:97bb, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom31, type: vless, server: 2803:f800:51::3473:d311, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom32, type: vless, server: 2606:4700:a9::e9bf:e35c, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom33, type: vless, server: 2606:4700:132::926:89d6, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom34, type: vless, server: 2606:4700:10::5109:3ff1, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom35, type: vless, server: 2606:4700:58::11a6:12a8, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom36, type: vless, server: 2606:4700:8::805b:b193, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom37, type: vless, server: 2606:4700:440e::36a0:9ccf, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom38, type: vless, server: 2606:4700:9766::7dc5:134d, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom39, type: vless, server: 2606:4700:9a90::4c13:55fc, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom40, type: vless, server: 2606:4700:131::1a64:bbd4, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom41, type: vless, server: 2606:4700:8ca2::8451:1cf6, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom42, type: vless, server: 2606:4700:3030::a3f0:20b1, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom43, type: vless, server: 2606:4700:90d7::f7b3:cc6f, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom44, type: vless, server: 2606:4700:8390:4a73:3ea, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom45, type: vless, server: 2606:4700:8396:bd48:eb, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom46, type: vless, server: 2606:4700:13e:f982:382c, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom47, type: vless, server: 2606:4700:4400:4ee0:1877, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom48, type: vless, server: 2606:4700:839c:f96:8609, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom49, type: vless, server: 2606:4700:8d7d:55ed:4293, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom50, type: vless, server: 2606:4700:10:ea9c:aa8e, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom51, type: vless, server: 2606:4700:10:2ed1:d31a, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom52, type: vless, server: 2606:4700:3030:9ae:4b9b, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+
+  - { name: Telecom53, type: vless, server: 2606:4700:12::da49:87a9, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  - { name: Telecom54, type: vless, server: 2606:4700:12::da49:87a9, port: 80, uuid: "1491705d-8b03-4f38-a96a-53ec6a9b1b5f", network: ws, tls: false, ws-opts: { path: "/?ed=2048", headers: { Host: "worker-fandai.ikun-black.workers.dev" } } }
+  
+  
+proxy-groups:
+
+  - { name: "GLOBAL PROXY", type: select, proxies: [全局自动, 全局排障, "HKG", "美国CDN优选1", "美国CDN优选2", "美国CDN优选3", "美国CDN优选4", "美国CDN优选5", "美国CDN优选6", "美国CDN优选7", "美国CDN优选8", "美国CDN优选9", "美国CDN优选10", "RA-OpenAI", "RA-EU", "RA-TW", "RA-HK", "RA-Timeis", "RCDN-A_联通", "RCDN-B_电信", "电信V4-A", "电信V4-B", "电信V4-C", "电信V4-D", "三网综合A", "三网综合B", "三网综合C", "三网综合D", "三网综合E", "三网综合F", "三网综合G", "三网综合H", "三网综合I", "三网综合J", "三网综合K", "三网综合L", "三网综合M", "三网综合N", "三网综合O", "三网综合1", "三网综合2", "三网综合3", "三网综合4", "三网综合5", "三网综合6", "三网综合7", "三网综合8", "三网综合9", "三网综合10", "三网综合11", "三网综合12", "三网综合13", "三网综合14", "三网综合15", "TelecomA", "TelecomB", "TelecomC","IPv6-移动1","IPv6-移动2","IPv6-移动3","IPv6-移动4","IPv6-移动5","IPv6-联通1","IPv6-联通2","IPv6-联通3","IPv6-联通4","IPv6-联通5","IPv6-电信1","IPv6-电信2","IPv6-电信3","IPv6-电信4","IPv6-电信5","IPv6-BPG1","IPv6-BPG2","IPv6-BPG3","IPv6-BPG4","IPv6-BPG5","IPv6-BPG6","IPv6-BPG7","IPv6-BPG8","IPv6-BPG9","IPv6-BPG10","IPv6-BPG11","IPv6-BPG12","IPv6-BPG13","IPv6-BPG14","IPv6-BPG15","移动HKG","移动SEA","移动SJC","移动LAX","移动CDG","移动MRS","移动MXP","联通HKG","联通SJC","联通LAX","联通CDG","电信SIN","电信SJC","电信LAX","电信AMS","电信BRU","电信ATL","电信IAD","电信LHR","电信EWR","Telecom1","Telecom2","Telecom3","Telecom4","Telecom5","Telecom6","Telecom7","Telecom8","Telecom9","Telecom10","Telecom11","Telecom12","Telecom13","Telecom14","Telecom15","Telecom16","Telecom17","Telecom18","Telecom19","Telecom20","Telecom21","Telecom22","Telecom23","Telecom24","Telecom25","Telecom26","Telecom27","Telecom28","Telecom29","Telecom30","Telecom31","Telecom32","Telecom33","Telecom34","Telecom35","Telecom36","Telecom37","Telecom38","Telecom39","Telecom40","Telecom41","Telecom42","Telecom43","Telecom44","Telecom45","Telecom46","Telecom47","Telecom48","Telecom49","Telecom50","Telecom51","Telecom52","Telecom53","Telecom54"] }
+  
+  - { name: "所有代理组", type: select, proxies: [全局自动, 全局排障, 均衡负载,USCP-Auto🇺🇸, RA-Auto, RCDN-Auto, TCV4-Auto, 三网综合-Auto, 电信专用-Auto ,IPv6-Auto, Telecom-Auto,USCP-排障🇺🇸, RA-排障, RCDN-排障, TCV4-排障, 三网综合-排障, 电信专用-排障 ,IPv6-排障,Telecom-排障] }
+  
+  - { name: "USCP🇺🇸", type: select, proxies: ["美国CDN优选1", "美国CDN优选2", "美国CDN优选3", "美国CDN优选4", "美国CDN优选5", "美国CDN优选6", "美国CDN优选7", "美国CDN优选8", "美国CDN优选9", "美国CDN优选10"] }
+  
+  - { name: "USCP-Auto🇺🇸", type: url-test, proxies: ["美国CDN优选1", "美国CDN优选2", "美国CDN优选3", "美国CDN优选4", "美国CDN优选5", "美国CDN优选6", "美国CDN优选7", "美国CDN优选8", "美国CDN优选9", "美国CDN优选10"] }
+  
+  - { name: "RA", type: select, proxies: ["RA-OpenAI", "RA-EU", "RA-TW", "RA-HK", "RA-Timeis"] }
+  
+  - { name: "RA-Auto", type: url-test, proxies: ["RA-OpenAI", "RA-EU", "RA-TW", "RA-HK", "RA-Timeis"] }
+  
+  - { name: "RCDN", type: select, proxies: [RCDN-Auto, "RCDN-A_联通", "RCDN-B_电信"] }
+  
+  - { name: "RCDN-Auto", type: url-test, proxies: ["RCDN-A_联通", "RCDN-B_电信"] }
+  
+  - { name: "TCV4", type: select, proxies: [TCV4-Auto, "电信V4-A", "电信V4-B", "电信V4-C", "电信V4-D"] }
+  
+  - { name: "TCV4-Auto", type: url-test, proxies: ["电信V4-A", "电信V4-B", "电信V4-C", "电信V4-D"] }
+  
+  - { name: "三网综合", type: select, proxies: [三网综合-Auto, "三网综合A", "三网综合B", "三网综合C", "三网综合D", "三网综合E", "三网综合F", "三网综合G", "三网综合H", "三网综合I", "三网综合J", "三网综合K", "三网综合L", "三网综合M", "三网综合N", "三网综合O", "三网综合1", "三网综合2", "三网综合3", "三网综合4", "三网综合5", "三网综合6", "三网综合7", "三网综合8", "三网综合9", "三网综合10", "三网综合11", "三网综合12", "三网综合13", "三网综合14", "三网综合15"] }
+  
+  - { name: "三网综合-Auto", type: url-test, proxies: ["三网综合A", "三网综合B", "三网综合C", "三网综合D", "三网综合E", "三网综合F", "三网综合G", "三网综合H", "三网综合I", "三网综合J", "三网综合K", "三网综合L", "三网综合M", "三网综合N", "三网综合O", "三网综合1", "三网综合2", "三网综合3", "三网综合4", "三网综合5", "三网综合6", "三网综合7", "三网综合8", "三网综合9", "三网综合10", "三网综合11", "三网综合12", "三网综合13", "三网综合14", "三网综合15"] }
+  
+  - { name: "电信专用", type: select, proxies: [电信专用-Auto, "TelecomA", "TelecomB", "TelecomC"] }
+  
+  - { name: "电信专用-Auto", type: url-test, proxies: ["TelecomA", "TelecomB", "TelecomC"] }
+  
+  - { name: "IPv6", type: "select", proxies: [IPv6-Auto,"IPv6-移动1","IPv6-移动2","IPv6-移动3","IPv6-移动4","IPv6-移动5","IPv6-联通1","IPv6-联通2","IPv6-联通3","IPv6-联通4","IPv6-联通5","IPv6-电信1","IPv6-电信2","IPv6-电信3","IPv6-电信4","IPv6-电信5","IPv6-BPG1","IPv6-BPG2","IPv6-BPG3","IPv6-BPG4","IPv6-BPG5","IPv6-BPG6","IPv6-BPG7","IPv6-BPG8","IPv6-BPG9","IPv6-BPG10","IPv6-BPG11","IPv6-BPG12","IPv6-BPG13","IPv6-BPG14","IPv6-BPG15","移动HKG","移动SEA","移动SJC","移动LAX","移动CDG","移动MRS","移动MXP","联通HKG","联通SJC","联通LAX","联通CDG","电信SIN","电信SJC","电信LAX","电信AMS","电信BRU","电信ATL","电信IAD","电信LHR","电信EWR"]}
+    
+  - { name: "IPv6-Auto", type: "url-test", proxies: ["IPv6-移动1","IPv6-移动2","IPv6-移动3","IPv6-移动4","IPv6-移动5","IPv6-联通1","IPv6-联通2","IPv6-联通3","IPv6-联通4","IPv6-联通5","IPv6-电信1","IPv6-电信2","IPv6-电信3","IPv6-电信4","IPv6-电信5","IPv6-BPG1","IPv6-BPG2","IPv6-BPG3","IPv6-BPG4","IPv6-BPG5","IPv6-BPG6","IPv6-BPG7","IPv6-BPG8","IPv6-BPG9","IPv6-BPG10","IPv6-BPG11","IPv6-BPG12","IPv6-BPG13","IPv6-BPG14","IPv6-BPG15","移动HKG","移动SEA","移动SJC","移动LAX","移动CDG","移动MRS","移动MXP","联通HKG","联通SJC","联通LAX","联通CDG","电信SIN","电信SJC","电信LAX","电信AMS","电信BRU","电信ATL","电信IAD","电信LHR","电信EWR"]}
+  
+  - { name: "Telecom", type: select, proxies: [Telecom-Auto,"Telecom1","Telecom2","Telecom3","Telecom4","Telecom5","Telecom6","Telecom7","Telecom8","Telecom9","Telecom10","Telecom11","Telecom12","Telecom13","Telecom14","Telecom15","Telecom16","Telecom17","Telecom18","Telecom19","Telecom20","Telecom21","Telecom22","Telecom23","Telecom24","Telecom25","Telecom26","Telecom27","Telecom28","Telecom29","Telecom30","Telecom31","Telecom32","Telecom33","Telecom34","Telecom35","Telecom36","Telecom37","Telecom38","Telecom39","Telecom40","Telecom41","Telecom42","Telecom43","Telecom44","Telecom45","Telecom46","Telecom47","Telecom48","Telecom49","Telecom50","Telecom51","Telecom52","Telecom53","Telecom54"] }
+  
+  - { name: "Telecom-Auto", type: url-test, proxies: ["Telecom1","Telecom2","Telecom3","Telecom4","Telecom5","Telecom6","Telecom7","Telecom8","Telecom9","Telecom10","Telecom11","Telecom12","Telecom13","Telecom14","Telecom15","Telecom16","Telecom17","Telecom18","Telecom19","Telecom20","Telecom21","Telecom22","Telecom23","Telecom24","Telecom25","Telecom26","Telecom27","Telecom28","Telecom29","Telecom30","Telecom31","Telecom32","Telecom33","Telecom34","Telecom35","Telecom36","Telecom37","Telecom38","Telecom39","Telecom40","Telecom41","Telecom42","Telecom43","Telecom44","Telecom45","Telecom46","Telecom47","Telecom48","Telecom49","Telecom50","Telecom51","Telecom52","Telecom53","Telecom54"] }
+  
+  - { name: "均衡负载", type: load-balance, proxies: ["美国CDN优选1", "美国CDN优选2", "美国CDN优选3", "美国CDN优选4", "美国CDN优选5", "美国CDN优选6", "美国CDN优选7", "美国CDN优选8", "美国CDN优选9", "美国CDN优选10", "RA-OpenAI", "RA-EU", "RA-TW", "RA-HK", "RA-Timeis", "RCDN-A_联通", "RCDN-B_电信", "电信V4-A", "电信V4-B", "电信V4-C", "电信V4-D", "三网综合A", "三网综合B", "三网综合C", "三网综合D", "三网综合E", "三网综合F", "三网综合G", "三网综合H", "三网综合I", "三网综合J", "三网综合K", "三网综合L", "三网综合M", "三网综合N", "三网综合O", "三网综合1", "三网综合2", "三网综合3", "三网综合4", "三网综合5", "三网综合6", "三网综合7", "三网综合8", "三网综合9", "三网综合10", "三网综合11", "三网综合12", "三网综合13", "三网综合14", "三网综合15", "TelecomA", "TelecomB", "TelecomC","IPv6-移动1","IPv6-移动2","IPv6-移动3","IPv6-移动4","IPv6-移动5","IPv6-联通1","IPv6-联通2","IPv6-联通3","IPv6-联通4","IPv6-联通5","IPv6-电信1","IPv6-电信2","IPv6-电信3","IPv6-电信4","IPv6-电信5","IPv6-BPG1","IPv6-BPG2","IPv6-BPG3","IPv6-BPG4","IPv6-BPG5","IPv6-BPG6","IPv6-BPG7","IPv6-BPG8","IPv6-BPG9","IPv6-BPG10","IPv6-BPG11","IPv6-BPG12","IPv6-BPG13","IPv6-BPG14","IPv6-BPG15","移动HKG","移动SEA","移动SJC","移动LAX","移动CDG","移动MRS","移动MXP","联通HKG","联通SJC","联通LAX","联通CDG","电信SIN","电信SJC","电信LAX","电信AMS","电信BRU","电信ATL","电信IAD","电信LHR","电信EWR","Telecom1","Telecom2","Telecom3","Telecom4","Telecom5","Telecom6","Telecom7","Telecom8","Telecom9","Telecom10","Telecom11","Telecom12","Telecom13","Telecom14","Telecom15","Telecom16","Telecom17","Telecom18","Telecom19","Telecom20","Telecom21","Telecom22","Telecom23","Telecom24","Telecom25","Telecom26","Telecom27","Telecom28","Telecom29","Telecom30","Telecom31","Telecom32","Telecom33","Telecom34","Telecom35","Telecom36","Telecom37","Telecom38","Telecom39","Telecom40","Telecom41","Telecom42","Telecom43","Telecom44","Telecom45","Telecom46","Telecom47","Telecom48","Telecom49","Telecom50","Telecom51","Telecom52","Telecom53","Telecom54"] }
+  
+  - { name: "全局自动", type: url-test, proxies: ["美国CDN优选1", "美国CDN优选2", "美国CDN优选3", "美国CDN优选4", "美国CDN优选5", "美国CDN优选6", "美国CDN优选7", "美国CDN优选8", "美国CDN优选9", "美国CDN优选10", "RA-OpenAI", "RA-EU", "RA-TW", "RA-HK", "RA-Timeis", "RCDN-A_联通", "RCDN-B_电信", "电信V4-A", "电信V4-B", "电信V4-C", "电信V4-D", "三网综合A", "三网综合B", "三网综合C", "三网综合D", "三网综合E", "三网综合F", "三网综合G", "三网综合H", "三网综合I", "三网综合J", "三网综合K", "三网综合L", "三网综合M", "三网综合N", "三网综合O", "三网综合1", "三网综合2", "三网综合3", "三网综合4", "三网综合5", "三网综合6", "三网综合7", "三网综合8", "三网综合9", "三网综合10", "三网综合11", "三网综合12", "三网综合13", "三网综合14", "三网综合15", "TelecomA", "TelecomB", "TelecomC","IPv6-移动1","IPv6-移动2","IPv6-移动3","IPv6-移动4","IPv6-移动5","IPv6-联通1","IPv6-联通2","IPv6-联通3","IPv6-联通4","IPv6-联通5","IPv6-电信1","IPv6-电信2","IPv6-电信3","IPv6-电信4","IPv6-电信5","IPv6-BPG1","IPv6-BPG2","IPv6-BPG3","IPv6-BPG4","IPv6-BPG5","IPv6-BPG6","IPv6-BPG7","IPv6-BPG8","IPv6-BPG9","IPv6-BPG10","IPv6-BPG11","IPv6-BPG12","IPv6-BPG13","IPv6-BPG14","IPv6-BPG15","移动HKG","移动SEA","移动SJC","移动LAX","移动CDG","移动MRS","移动MXP","联通HKG","联通SJC","联通LAX","联通CDG","电信SIN","电信SJC","电信LAX","电信AMS","电信BRU","电信ATL","电信IAD","电信LHR","电信EWR","Telecom1","Telecom2","Telecom3","Telecom4","Telecom5","Telecom6","Telecom7","Telecom8","Telecom9","Telecom10","Telecom11","Telecom12","Telecom13","Telecom14","Telecom15","Telecom16","Telecom17","Telecom18","Telecom19","Telecom20","Telecom21","Telecom22","Telecom23","Telecom24","Telecom25","Telecom26","Telecom27","Telecom28","Telecom29","Telecom30","Telecom31","Telecom32","Telecom33","Telecom34","Telecom35","Telecom36","Telecom37","Telecom38","Telecom39","Telecom40","Telecom41","Telecom42","Telecom43","Telecom44","Telecom45","Telecom46","Telecom47","Telecom48","Telecom49","Telecom50","Telecom51","Telecom52","Telecom53","Telecom54"] }
+  
+  - { name: "全局排障", type: fallback, proxies: ["美国CDN优选1", "美国CDN优选2", "美国CDN优选3", "美国CDN优选4", "美国CDN优选5", "美国CDN优选6", "美国CDN优选7", "美国CDN优选8", "美国CDN优选9", "美国CDN优选10", "RA-OpenAI", "RA-EU", "RA-TW", "RA-HK", "RA-Timeis", "RCDN-A_联通", "RCDN-B_电信", "电信V4-A", "电信V4-B", "电信V4-C", "电信V4-D", "三网综合A", "三网综合B", "三网综合C", "三网综合D", "三网综合E", "三网综合F", "三网综合G", "三网综合H", "三网综合I", "三网综合J", "三网综合K", "三网综合L", "三网综合M", "三网综合N", "三网综合O", "三网综合1", "三网综合2", "三网综合3", "三网综合4", "三网综合5", "三网综合6", "三网综合7", "三网综合8", "三网综合9", "三网综合10", "三网综合11", "三网综合12", "三网综合13", "三网综合14", "三网综合15", "TelecomA", "TelecomB", "TelecomC","IPv6-移动1","IPv6-移动2","IPv6-移动3","IPv6-移动4","IPv6-移动5","IPv6-联通1","IPv6-联通2","IPv6-联通3","IPv6-联通4","IPv6-联通5","IPv6-电信1","IPv6-电信2","IPv6-电信3","IPv6-电信4","IPv6-电信5","IPv6-BPG1","IPv6-BPG2","IPv6-BPG3","IPv6-BPG4","IPv6-BPG5","IPv6-BPG6","IPv6-BPG7","IPv6-BPG8","IPv6-BPG9","IPv6-BPG10","IPv6-BPG11","IPv6-BPG12","IPv6-BPG13","IPv6-BPG14","IPv6-BPG15","移动HKG","移动SEA","移动SJC","移动LAX","移动CDG","移动MRS","移动MXP","联通HKG","联通SJC","联通LAX","联通CDG","电信SIN","电信SJC","电信LAX","电信AMS","电信BRU","电信ATL","电信IAD","电信LHR","电信EWR","Telecom1","Telecom2","Telecom3","Telecom4","Telecom5","Telecom6","Telecom7","Telecom8","Telecom9","Telecom10","Telecom11","Telecom12","Telecom13","Telecom14","Telecom15","Telecom16","Telecom17","Telecom18","Telecom19","Telecom20","Telecom21","Telecom22","Telecom23","Telecom24","Telecom25","Telecom26","Telecom27","Telecom28","Telecom29","Telecom30","Telecom31","Telecom32","Telecom33","Telecom34","Telecom35","Telecom36","Telecom37","Telecom38","Telecom39","Telecom40","Telecom41","Telecom42","Telecom43","Telecom44","Telecom45","Telecom46","Telecom47","Telecom48","Telecom49","Telecom50","Telecom51","Telecom52","Telecom53","Telecom54"] }
+  
+  - { name: "以下为排障节点", type: fallback, proxies: [全局排障, USCP-排障🇺🇸, RA-排障, RCDN-排障, TCV4-排障, 三网综合-排障, 电信专用-排障, IPv6-排障,Telecom-排障] }
+  
+  - { name: "USCP-排障🇺🇸", type: fallback, proxies: ["美国CDN优选1", "美国CDN优选2", "美国CDN优选3", "美国CDN优选4", "美国CDN优选5", "美国CDN优选6", "美国CDN优选7", "美国CDN优选8", "美国CDN优选9", "美国CDN优选10"] }
+  
+  - { name: "RA-排障", type: fallback, proxies: ["RA-OpenAI", "RA-EU", "RA-TW", "RA-HK", "RA-Timeis"] }
+  
+  - { name: "RCDN-排障", type: fallback, proxies: ["RCDN-A_联通", "RCDN-B_电信",] }
+  
+  - { name: "TCV4-排障", type: fallback, proxies: ["电信V4-A", "电信V4-B", "电信V4-C", "电信V4-D"] }
+  
+  - { name: "三网综合-排障", type: fallback, proxies: ["三网综合A", "三网综合B", "三网综合C", "三网综合D", "三网综合E", "三网综合F", "三网综合G", "三网综合H", "三网综合I", "三网综合J", "三网综合K", "三网综合L", "三网综合M", "三网综合N", "三网综合O", "三网综合1", "三网综合2", "三网综合3", "三网综合4", "三网综合5", "三网综合6", "三网综合7", "三网综合8", "三网综合9", "三网综合10", "三网综合11", "三网综合12", "三网综合13", "三网综合14", "三网综合15"] }
+  
+  - { name: "电信专用-排障", type: fallback, proxies: ["TelecomA", "TelecomB", "TelecomC"] }
+  
+  - { name: "IPv6-排障", type: "fallback", proxies: ["IPv6-移动1","IPv6-移动2","IPv6-移动3","IPv6-移动4","IPv6-移动5","IPv6-联通1","IPv6-联通2","IPv6-联通3","IPv6-联通4","IPv6-联通5","IPv6-电信1","IPv6-电信2","IPv6-电信3","IPv6-电信4","IPv6-电信5","IPv6-BPG1","IPv6-BPG2","IPv6-BPG3","IPv6-BPG4","IPv6-BPG5","IPv6-BPG6","IPv6-BPG7","IPv6-BPG8","IPv6-BPG9","IPv6-BPG10","IPv6-BPG11","IPv6-BPG12","IPv6-BPG13","IPv6-BPG14","IPv6-BPG15","移动HKG","移动SEA","移动SJC","移动LAX","移动CDG","移动MRS","移动MXP","联通HKG","联通SJC","联通LAX","联通CDG","电信SIN","电信SJC","电信LAX","电信AMS","电信BRU","电信ATL","电信IAD","电信LHR","电信EWR"]}
+  
+  - { name: "Telecom-排障", type: fallback, proxies: ["Telecom1","Telecom2","Telecom3","Telecom4","Telecom5","Telecom6","Telecom7","Telecom8","Telecom9","Telecom10","Telecom11","Telecom12","Telecom13","Telecom14","Telecom15","Telecom16","Telecom17","Telecom18","Telecom19","Telecom20","Telecom21","Telecom22","Telecom23","Telecom24","Telecom25","Telecom26","Telecom27","Telecom28","Telecom29","Telecom30","Telecom31","Telecom32","Telecom33","Telecom34","Telecom35","Telecom36","Telecom37","Telecom38","Telecom39","Telecom40","Telecom41","Telecom42","Telecom43","Telecom44","Telecom45","Telecom46","Telecom47","Telecom48","Telecom49","Telecom50","Telecom51","Telecom52","Telecom53","Telecom54"] }
+  
+
+  
+rules:
+    - 'DOMAIN-SUFFIX,mzstatic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,itunes.apple.com,DIRECT'
+    - 'DOMAIN-SUFFIX,icloud.com,DIRECT'
+    - 'DOMAIN-SUFFIX,icloud-content.com,DIRECT'
+    - 'DOMAIN-SUFFIX,me.com,DIRECT'
+    - 'DOMAIN-SUFFIX,aaplimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cdn20.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cdn-apple.com,DIRECT'
+    - 'DOMAIN-SUFFIX,akadns.net,DIRECT'
+    - 'DOMAIN-SUFFIX,akamaiedge.net,DIRECT'
+    - 'DOMAIN-SUFFIX,edgekey.net,DIRECT'
+    - 'DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,mwcname.com,DIRECT'
+    - 'DOMAIN-SUFFIX,apple.com,DIRECT'
+    - 'DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT'
+    - 'DOMAIN-SUFFIX,apple-mapkit.com,DIRECT'
+    - 'DOMAIN-SUFFIX,126.com,DIRECT'
+    - 'DOMAIN-SUFFIX,126.net,DIRECT'
+    - 'DOMAIN-SUFFIX,127.net,DIRECT'
+    - 'DOMAIN-SUFFIX,163.com,DIRECT'
+    - 'DOMAIN-SUFFIX,360buyimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,36kr.com,DIRECT'
+    - 'DOMAIN-SUFFIX,acfun.tv,DIRECT'
+    - 'DOMAIN-SUFFIX,air-matters.com,DIRECT'
+    - 'DOMAIN-SUFFIX,aixifan.com,DIRECT'
+    - 'DOMAIN-KEYWORD,alicdn,DIRECT'
+    - 'DOMAIN-KEYWORD,alipay,DIRECT'
+    - 'DOMAIN-KEYWORD,taobao,DIRECT'
+    - 'DOMAIN-SUFFIX,amap.com,DIRECT'
+    - 'DOMAIN-SUFFIX,autonavi.com,DIRECT'
+    - 'DOMAIN-KEYWORD,baidu,DIRECT'
+    - 'DOMAIN-SUFFIX,bdimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,bdstatic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,bilibili.com,DIRECT'
+    - 'DOMAIN-SUFFIX,bilivideo.com,DIRECT'
+    - 'DOMAIN-SUFFIX,caiyunapp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,clouddn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cnbeta.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cnbetacdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cootekservice.com,DIRECT'
+    - 'DOMAIN-SUFFIX,csdn.net,DIRECT'
+    - 'DOMAIN-SUFFIX,ctrip.com,DIRECT'
+    - 'DOMAIN-SUFFIX,dgtle.com,DIRECT'
+    - 'DOMAIN-SUFFIX,dianping.com,DIRECT'
+    - 'DOMAIN-SUFFIX,douban.com,DIRECT'
+    - 'DOMAIN-SUFFIX,doubanio.com,DIRECT'
+    - 'DOMAIN-SUFFIX,duokan.com,DIRECT'
+    - 'DOMAIN-SUFFIX,easou.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ele.me,DIRECT'
+    - 'DOMAIN-SUFFIX,feng.com,DIRECT'
+    - 'DOMAIN-SUFFIX,fir.im,DIRECT'
+    - 'DOMAIN-SUFFIX,frdic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,g-cores.com,DIRECT'
+    - 'DOMAIN-SUFFIX,godic.net,DIRECT'
+    - 'DOMAIN-SUFFIX,gtimg.com,DIRECT'
+    - 'DOMAIN,cdn.hockeyapp.net,DIRECT'
+    - 'DOMAIN-SUFFIX,hongxiu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,hxcdn.net,DIRECT'
+    - 'DOMAIN-SUFFIX,iciba.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ifeng.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ifengimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ipip.net,DIRECT'
+    - 'DOMAIN-SUFFIX,iqiyi.com,DIRECT'
+    - 'DOMAIN-SUFFIX,jd.com,DIRECT'
+    - 'DOMAIN-SUFFIX,jianshu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,knewone.com,DIRECT'
+    - 'DOMAIN-SUFFIX,le.com,DIRECT'
+    - 'DOMAIN-SUFFIX,lecloud.com,DIRECT'
+    - 'DOMAIN-SUFFIX,lemicp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,licdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,luoo.net,DIRECT'
+    - 'DOMAIN-SUFFIX,meituan.com,DIRECT'
+    - 'DOMAIN-SUFFIX,meituan.net,DIRECT'
+    - 'DOMAIN-SUFFIX,mi.com,DIRECT'
+    - 'DOMAIN-SUFFIX,miaopai.com,DIRECT'
+    - 'DOMAIN-SUFFIX,miui.com,DIRECT'
+    - 'DOMAIN-SUFFIX,miwifi.com,DIRECT'
+    - 'DOMAIN-SUFFIX,mob.com,DIRECT'
+    - 'DOMAIN-SUFFIX,netease.com,DIRECT'
+    - 'DOMAIN-SUFFIX,office.com,DIRECT'
+    - 'DOMAIN-SUFFIX,office365.com,DIRECT'
+    - 'DOMAIN-KEYWORD,officecdn,DIRECT'
+    - 'DOMAIN-SUFFIX,oschina.net,DIRECT'
+    - 'DOMAIN-SUFFIX,ppsimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,pstatp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qcloud.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qdaily.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qdmm.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qhimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qhres.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qidian.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qihucdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qiniu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qiniucdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qiyipic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qq.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qqurl.com,DIRECT'
+    - 'DOMAIN-SUFFIX,rarbg.to,DIRECT'
+    - 'DOMAIN-SUFFIX,ruguoapp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,segmentfault.com,DIRECT'
+    - 'DOMAIN-SUFFIX,sinaapp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,smzdm.com,DIRECT'
+    - 'DOMAIN-SUFFIX,snapdrop.net,DIRECT'
+    - 'DOMAIN-SUFFIX,sogou.com,DIRECT'
+    - 'DOMAIN-SUFFIX,sogoucdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,sohu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,soku.com,DIRECT'
+    - 'DOMAIN-SUFFIX,speedtest.net,DIRECT'
+    - 'DOMAIN-SUFFIX,sspai.com,DIRECT'
+    - 'DOMAIN-SUFFIX,suning.com,DIRECT'
+    - 'DOMAIN-SUFFIX,taobao.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tencent.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tenpay.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tianyancha.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tmall.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tudou.com,DIRECT'
+    - 'DOMAIN-SUFFIX,umetrip.com,DIRECT'
+    - 'DOMAIN-SUFFIX,upaiyun.com,DIRECT'
+    - 'DOMAIN-SUFFIX,upyun.com,DIRECT'
+    - 'DOMAIN-SUFFIX,veryzhun.com,DIRECT'
+    - 'DOMAIN-SUFFIX,weather.com,DIRECT'
+    - 'DOMAIN-SUFFIX,weibo.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xiami.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xiami.net,DIRECT'
+    - 'DOMAIN-SUFFIX,xiaomicp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ximalaya.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xmcdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xunlei.com,DIRECT'
+    - 'DOMAIN-SUFFIX,yhd.com,DIRECT'
+    - 'DOMAIN-SUFFIX,yihaodianimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,yinxiang.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ykimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,youdao.com,DIRECT'
+    - 'DOMAIN-SUFFIX,youku.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zealer.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zhihu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zhimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zimuzu.tv,DIRECT'
+    - 'DOMAIN-SUFFIX,zoho.com,DIRECT'
+    - 'DOMAIN-KEYWORD,admarvel,REJECT'
+    - 'DOMAIN-KEYWORD,admaster,REJECT'
+    - 'DOMAIN-KEYWORD,adsage,REJECT'
+    - 'DOMAIN-KEYWORD,adsmogo,REJECT'
+    - 'DOMAIN-KEYWORD,adsrvmedia,REJECT'
+    - 'DOMAIN-KEYWORD,adwords,REJECT'
+    - 'DOMAIN-KEYWORD,adservice,REJECT'
+    - 'DOMAIN-SUFFIX,appsflyer.com,REJECT'
+    - 'DOMAIN-KEYWORD,domob,REJECT'
+    - 'DOMAIN-SUFFIX,doubleclick.net,REJECT'
+    - 'DOMAIN-KEYWORD,duomeng,REJECT'
+    - 'DOMAIN-KEYWORD,dwtrack,REJECT'
+    - 'DOMAIN-KEYWORD,guanggao,REJECT'
+    - 'DOMAIN-KEYWORD,lianmeng,REJECT'
+    - 'DOMAIN-SUFFIX,mmstat.com,REJECT'
+    - 'DOMAIN-KEYWORD,mopub,REJECT'
+    - 'DOMAIN-KEYWORD,omgmta,REJECT'
+    - 'DOMAIN-KEYWORD,openx,REJECT'
+    - 'DOMAIN-KEYWORD,partnerad,REJECT'
+    - 'DOMAIN-KEYWORD,pingfore,REJECT'
+    - 'DOMAIN-KEYWORD,supersonicads,REJECT'
+    - 'DOMAIN-KEYWORD,uedas,REJECT'
+    - 'DOMAIN-KEYWORD,umeng,REJECT'
+    - 'DOMAIN-KEYWORD,usage,REJECT'
+    - 'DOMAIN-SUFFIX,vungle.com,REJECT'
+    - 'DOMAIN-KEYWORD,wlmonitor,REJECT'
+    - 'DOMAIN-KEYWORD,zjtoolbar,REJECT'
+    - 'DOMAIN,injections.adguard.org,DIRECT'
+    - 'DOMAIN,local.adguard.org,DIRECT'
+    - 'DOMAIN-SUFFIX,local,DIRECT'
+    - 'IP-CIDR,127.0.0.0/8,DIRECT'
+    - 'IP-CIDR,172.16.0.0/12,DIRECT'
+    - 'IP-CIDR,192.168.0.0/16,DIRECT'
+    - 'IP-CIDR,10.0.0.0/8,DIRECT'
+    - 'IP-CIDR,17.0.0.0/8,DIRECT'
+    - 'IP-CIDR,100.64.0.0/10,DIRECT'
+    - 'IP-CIDR,224.0.0.0/4,DIRECT'
+    - 'IP-CIDR6,fe80::/10,DIRECT'
+    - 'DOMAIN-SUFFIX,cn,DIRECT'
+    - 'DOMAIN-KEYWORD,-cn,DIRECT'
+    - 'GEOIP,CN,DIRECT'
+    - 'IP-CIDR,119.96.137.5/32,DIRECT,no-resolve'
+    - 'IP-CIDR,46.29.166.132/32,DIRECT,no-resolve'
+    - 'IP-CIDR,64.227.98.237/32,DIRECT,no-resolve'
+    - 'DOMAIN,www.freebb.me,DIRECT'
+    - 'DOMAIN-SUFFIX,mzstatic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,itunes.apple.com,DIRECT'
+    - 'DOMAIN-SUFFIX,icloud.com,DIRECT'
+    - 'DOMAIN-SUFFIX,icloud-content.com,DIRECT'
+    - 'DOMAIN-SUFFIX,me.com,DIRECT'
+    - 'DOMAIN-SUFFIX,aaplimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cdn20.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cdn-apple.com,DIRECT'
+    - 'DOMAIN-SUFFIX,akadns.net,DIRECT'
+    - 'DOMAIN-SUFFIX,akamaiedge.net,DIRECT'
+    - 'DOMAIN-SUFFIX,edgekey.net,DIRECT'
+    - 'DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,mwcname.com,DIRECT'
+    - 'DOMAIN-SUFFIX,apple.com,DIRECT'
+    - 'DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT'
+    - 'DOMAIN-SUFFIX,apple-mapkit.com,DIRECT'
+    - 'DOMAIN-SUFFIX,126.com,DIRECT'
+    - 'DOMAIN-SUFFIX,126.net,DIRECT'
+    - 'DOMAIN-SUFFIX,127.net,DIRECT'
+    - 'DOMAIN-SUFFIX,163.com,DIRECT'
+    - 'DOMAIN-SUFFIX,360buyimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,36kr.com,DIRECT'
+    - 'DOMAIN-SUFFIX,acfun.tv,DIRECT'
+    - 'DOMAIN-SUFFIX,air-matters.com,DIRECT'
+    - 'DOMAIN-SUFFIX,aixifan.com,DIRECT'
+    - 'DOMAIN-KEYWORD,alicdn,DIRECT'
+    - 'DOMAIN-KEYWORD,alipay,DIRECT'
+    - 'DOMAIN-KEYWORD,taobao,DIRECT'
+    - 'DOMAIN-SUFFIX,amap.com,DIRECT'
+    - 'DOMAIN-SUFFIX,autonavi.com,DIRECT'
+    - 'DOMAIN-KEYWORD,baidu,DIRECT'
+    - 'DOMAIN-SUFFIX,bdimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,bdstatic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,bilibili.com,DIRECT'
+    - 'DOMAIN-SUFFIX,bilivideo.com,DIRECT'
+    - 'DOMAIN-SUFFIX,caiyunapp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,clouddn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cnbeta.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cnbetacdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,cootekservice.com,DIRECT'
+    - 'DOMAIN-SUFFIX,csdn.net,DIRECT'
+    - 'DOMAIN-SUFFIX,ctrip.com,DIRECT'
+    - 'DOMAIN-SUFFIX,dgtle.com,DIRECT'
+    - 'DOMAIN-SUFFIX,dianping.com,DIRECT'
+    - 'DOMAIN-SUFFIX,douban.com,DIRECT'
+    - 'DOMAIN-SUFFIX,doubanio.com,DIRECT'
+    - 'DOMAIN-SUFFIX,duokan.com,DIRECT'
+    - 'DOMAIN-SUFFIX,easou.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ele.me,DIRECT'
+    - 'DOMAIN-SUFFIX,feng.com,DIRECT'
+    - 'DOMAIN-SUFFIX,fir.im,DIRECT'
+    - 'DOMAIN-SUFFIX,frdic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,g-cores.com,DIRECT'
+    - 'DOMAIN-SUFFIX,godic.net,DIRECT'
+    - 'DOMAIN-SUFFIX,gtimg.com,DIRECT'
+    - 'DOMAIN,cdn.hockeyapp.net,DIRECT'
+    - 'DOMAIN-SUFFIX,hongxiu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,hxcdn.net,DIRECT'
+    - 'DOMAIN-SUFFIX,iciba.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ifeng.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ifengimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ipip.net,DIRECT'
+    - 'DOMAIN-SUFFIX,iqiyi.com,DIRECT'
+    - 'DOMAIN-SUFFIX,jd.com,DIRECT'
+    - 'DOMAIN-SUFFIX,jianshu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,knewone.com,DIRECT'
+    - 'DOMAIN-SUFFIX,le.com,DIRECT'
+    - 'DOMAIN-SUFFIX,lecloud.com,DIRECT'
+    - 'DOMAIN-SUFFIX,lemicp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,licdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,luoo.net,DIRECT'
+    - 'DOMAIN-SUFFIX,meituan.com,DIRECT'
+    - 'DOMAIN-SUFFIX,meituan.net,DIRECT'
+    - 'DOMAIN-SUFFIX,mi.com,DIRECT'
+    - 'DOMAIN-SUFFIX,miaopai.com,DIRECT'
+    - 'DOMAIN-SUFFIX,microsoft.com,DIRECT'
+    - 'DOMAIN-SUFFIX,microsoftonline.com,DIRECT'
+    - 'DOMAIN-SUFFIX,miui.com,DIRECT'
+    - 'DOMAIN-SUFFIX,miwifi.com,DIRECT'
+    - 'DOMAIN-SUFFIX,mob.com,DIRECT'
+    - 'DOMAIN-SUFFIX,netease.com,DIRECT'
+    - 'DOMAIN-SUFFIX,office.com,DIRECT'
+    - 'DOMAIN-SUFFIX,office365.com,DIRECT'
+    - 'DOMAIN-KEYWORD,officecdn,DIRECT'
+    - 'DOMAIN-SUFFIX,oschina.net,DIRECT'
+    - 'DOMAIN-SUFFIX,ppsimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,pstatp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qcloud.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qdaily.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qdmm.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qhimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qhres.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qidian.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qihucdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qiniu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qiniucdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qiyipic.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qq.com,DIRECT'
+    - 'DOMAIN-SUFFIX,qqurl.com,DIRECT'
+    - 'DOMAIN-SUFFIX,rarbg.to,DIRECT'
+    - 'DOMAIN-SUFFIX,ruguoapp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,segmentfault.com,DIRECT'
+    - 'DOMAIN-SUFFIX,sinaapp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,smzdm.com,DIRECT'
+    - 'DOMAIN-SUFFIX,snapdrop.net,DIRECT'
+    - 'DOMAIN-SUFFIX,sogou.com,DIRECT'
+    - 'DOMAIN-SUFFIX,sogoucdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,sohu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,soku.com,DIRECT'
+    - 'DOMAIN-SUFFIX,speedtest.net,DIRECT'
+    - 'DOMAIN-SUFFIX,sspai.com,DIRECT'
+    - 'DOMAIN-SUFFIX,suning.com,DIRECT'
+    - 'DOMAIN-SUFFIX,taobao.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tencent.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tenpay.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tianyancha.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tmall.com,DIRECT'
+    - 'DOMAIN-SUFFIX,tudou.com,DIRECT'
+    - 'DOMAIN-SUFFIX,umetrip.com,DIRECT'
+    - 'DOMAIN-SUFFIX,upaiyun.com,DIRECT'
+    - 'DOMAIN-SUFFIX,upyun.com,DIRECT'
+    - 'DOMAIN-SUFFIX,veryzhun.com,DIRECT'
+    - 'DOMAIN-SUFFIX,weather.com,DIRECT'
+    - 'DOMAIN-SUFFIX,weibo.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xiami.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xiami.net,DIRECT'
+    - 'DOMAIN-SUFFIX,xiaomicp.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ximalaya.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xmcdn.com,DIRECT'
+    - 'DOMAIN-SUFFIX,xunlei.com,DIRECT'
+    - 'DOMAIN-SUFFIX,yhd.com,DIRECT'
+    - 'DOMAIN-SUFFIX,yihaodianimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,yinxiang.com,DIRECT'
+    - 'DOMAIN-SUFFIX,ykimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,youdao.com,DIRECT'
+    - 'DOMAIN-SUFFIX,youku.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zealer.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zhihu.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zhimg.com,DIRECT'
+    - 'DOMAIN-SUFFIX,zimuzu.tv,DIRECT'
+    - 'DOMAIN-SUFFIX,zoho.com,DIRECT'
+    - 'DOMAIN-KEYWORD,admarvel,REJECT'
+    - 'DOMAIN-KEYWORD,admaster,REJECT'
+    - 'DOMAIN-KEYWORD,adsage,REJECT'
+    - 'DOMAIN-KEYWORD,adsmogo,REJECT'
+    - 'DOMAIN-KEYWORD,adsrvmedia,REJECT'
+    - 'DOMAIN-KEYWORD,adwords,REJECT'
+    - 'DOMAIN-KEYWORD,adservice,REJECT'
+    - 'DOMAIN-SUFFIX,appsflyer.com,REJECT'
+    - 'DOMAIN-KEYWORD,domob,REJECT'
+    - 'DOMAIN-SUFFIX,doubleclick.net,REJECT'
+    - 'DOMAIN-KEYWORD,duomeng,REJECT'
+    - 'DOMAIN-KEYWORD,dwtrack,REJECT'
+    - 'DOMAIN-KEYWORD,guanggao,REJECT'
+    - 'DOMAIN-KEYWORD,lianmeng,REJECT'
+    - 'DOMAIN-SUFFIX,mmstat.com,REJECT'
+    - 'DOMAIN-KEYWORD,mopub,REJECT'
+    - 'DOMAIN-KEYWORD,omgmta,REJECT'
+    - 'DOMAIN-KEYWORD,openx,REJECT'
+    - 'DOMAIN-KEYWORD,partnerad,REJECT'
+    - 'DOMAIN-KEYWORD,pingfore,REJECT'
+    - 'DOMAIN-KEYWORD,supersonicads,REJECT'
+    - 'DOMAIN-KEYWORD,uedas,REJECT'
+    - 'DOMAIN-KEYWORD,umeng,REJECT'
+    - 'DOMAIN-KEYWORD,usage,REJECT'
+    - 'DOMAIN-SUFFIX,vungle.com,REJECT'
+    - 'DOMAIN-KEYWORD,wlmonitor,REJECT'
+    - 'DOMAIN-KEYWORD,zjtoolbar,REJECT'
+    - 'DOMAIN,injections.adguard.org,DIRECT'
+    - 'DOMAIN,local.adguard.org,DIRECT'
+    - 'DOMAIN-SUFFIX,local,DIRECT'
+    - 'IP-CIDR,127.0.0.0/8,DIRECT'
+    - 'IP-CIDR,172.16.0.0/12,DIRECT'
+    - 'IP-CIDR,192.168.0.0/16,DIRECT'
+    - 'IP-CIDR,10.0.0.0/8,DIRECT'
+    - 'IP-CIDR,17.0.0.0/8,DIRECT'
+    - 'IP-CIDR,100.64.0.0/10,DIRECT'
+    - 'IP-CIDR,224.0.0.0/4,DIRECT'
+    - 'IP-CIDR6,fe80::/10,DIRECT'
+    - 'DOMAIN-SUFFIX,cn,DIRECT'
+    - 'DOMAIN-KEYWORD,-cn,DIRECT'
+    - 'GEOIP,CN,DIRECT'
